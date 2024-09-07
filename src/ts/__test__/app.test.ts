@@ -1,4 +1,4 @@
-import { App } from "../../app";
+import { App } from "../app";
 
 describe("App", () => {
   // Instancia de la aplicación
@@ -31,17 +31,6 @@ describe("App", () => {
     // Verifica que bindEvents fue llamado
     expect(spy).toHaveBeenCalled();
   });
-
-  it("should resolve makeRequest promise", () => {
-    // Espía el método makeRequest
-    const spy = jest.spyOn(app as any, "makeRequest");
-
-    // Dispara el evento DOMContentLoaded
-    document.dispatchEvent(new Event("DOMContentLoaded"));
-
-    // Verifica que makeRequest fue llamado
-    expect(spy).toHaveBeenCalled();
-  }, 10000);
-
+ 
 
 });

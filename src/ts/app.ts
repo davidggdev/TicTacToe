@@ -1,19 +1,26 @@
 import axios from "axios";
+import { MainScene } from "./scenes/MainScene";
 
 /**
- * Clase principal de la aplicación
+ * Clase App - Controla la aplicación
  */
 export class App {
+  mainScene: MainScene;
+
   /**
    * Constructor de la clase
    * @constructor
    * @returns {void}
    */
-  constructor() {}
+  constructor() {
+    // Instancia de la escena principal
+    this.mainScene = new MainScene();
+  }
 
   /**
    * Inicializa la aplicación
    * @returns {void}
+   * @public
    */
   public init(): App {
     document.addEventListener("DOMContentLoaded", () => {
@@ -26,51 +33,20 @@ export class App {
   /**
    * Método que se ejecuta cuando el DOM está cargado
    * @returns {void}
+   * @private
    */
   private onDomContentLoaded(): void {
     this.bindEvents();
-
-    // resolve makeRequest promise
-    this.makeRequest();
   }
 
   /**
    * Enlaza los eventos de la aplicación
    * @returns {void}
+   * @private
    */
   private bindEvents(): void {
-    const button = document.getElementById("myButton");
-    if (button) {
-      button.addEventListener("click", this.handleButtonClick);
-    }
-  }
-
-  /**
-   * Manejador del evento clic del botón
-   * @returns {void}
-   * @private
-   */
-  private handleButtonClick(): void {
-    alert("¡Botón clicado!");
-  }
-
-  /**
-   * Realiza una petición AJAX
-   * @returns {Promise<void>}
-   * @private
-   */
-  private async makeRequest(): Promise<void> {
-    axios
-      .post("/api/ajax-handler.php", {
-        action: "index/get",
-        data: {},
-      })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // Bind events from MainScene class
+    this.mainScene.bindEvents();
   }
 }
 
