@@ -1,9 +1,9 @@
 import { Scene } from "../Scene";
 
 /**
- * Clase HomeScene
+ * Clase GameScene
  */
-export class HomeScene {
+export class GameScene {
   /**
    *  Escena de la aplicación
    */
@@ -18,14 +18,14 @@ export class HomeScene {
   }
 
   public init() {
-    this.scene = new Scene("home");
+    this.scene = new Scene("game");
   }
-  
+
   /**
    * Enlaza los eventos de la escena Home
    */
   public bindEvents(): void {
-    console.log("HomeScene bindEvents");
+    console.log("GameScene bindEvents");
   }
 
   public unbildEvents(): void {

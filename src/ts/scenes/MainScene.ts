@@ -1,22 +1,45 @@
 import { Scene } from "../Scene";
+import { HomeScene } from "./HomeScene";
+import { GameScene } from "./GameScene";
+import { ScoresScene } from "./ScoresScene";
 
 /**
  * Clase MainScene - Controla la escena principal de la aplicación
  */
 export class MainScene {
   /**
-   * Escena de la aplicación
-   * @type {Scene} scene - Escena de la aplicación
+   * Escena de la escena Home
+   * @type {HomeScene}
    * @public
    */
-  scene: Scene;
+  homeScene: HomeScene;
+
+  /**
+   * Escena de la escena Game
+   * @type {GameScene}
+   * @public
+   */
+  gameScene: GameScene;
+
+  /**
+   * Escena de la escena Scores
+   * @type {ScoresScene}
+   * @public
+   */
+  scoresScene: ScoresScene;
 
   /**
    * Constructor de la clase
    * @constructor
    */
   constructor() {
-    this.scene = new Scene();
+    // Inicializamos las escenas
+    this.homeScene = new HomeScene();
+    this.gameScene = new GameScene();
+    this.scoresScene = new ScoresScene();
+
+    // Inicializamos la escena Home por defecto
+    this.homeScene.init();
   }
 
   /**
@@ -68,7 +91,8 @@ export class MainScene {
    * @private
    */
   private onGameClick(): void {
-    this.scene.setSceneContainer("game");
+    this.gameScene.init();
+    this.gameScene.bindEvents();
   }
 
   /**
@@ -77,7 +101,8 @@ export class MainScene {
    * @private
    */
   private onHomeClick(): void {
-    this.scene.setSceneContainer("home");
+    this.homeScene.init();
+    this.homeScene.bindEvents();
   }
 
   /**
@@ -86,6 +111,7 @@ export class MainScene {
    * @private
    */
   private onHomeScores(): void {
-    this.scene.setSceneContainer("scores");
+    this.scoresScene.init();
+    this.scoresScene.bindEvents();
   }
 }

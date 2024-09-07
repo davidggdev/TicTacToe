@@ -1,16 +1,11 @@
 import axios from "axios";
 import { MainScene } from "./scenes/MainScene";
-import { HomeScene } from "./scenes/HomeScene";
 
 /**
  * Clase App - Controla la aplicación
  */
 export class App {
   mainScene: MainScene;
-  /**
-   * Escena de la escena Home
-   */
-  homeScene: HomeScene;
 
   /**
    * Constructor de la clase
@@ -19,7 +14,6 @@ export class App {
    */
   constructor() {
     this.mainScene = new MainScene();
-    this.homeScene = new HomeScene();
   }
 
   /**
@@ -52,9 +46,6 @@ export class App {
   private bindEvents(): void {
     // Bind events from MainScene class
     this.mainScene.bindEvents();
-
-    // Bind events from Scene class
-    this.homeScene.bindEvents();
   }
 
   /**
