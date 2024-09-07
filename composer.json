@@ -1,0 +1,9 @@
+{
+    "name": "dggdev/mytest",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Api\\": "public/Api/"
+        }
+    }
+}

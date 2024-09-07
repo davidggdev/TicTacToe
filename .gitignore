@@ -1,0 +1,7 @@
+/node_modules
+/public/js/*.js
+/db/database.sqlite
+/vendor
+.env
+composer.lock
+package-lock.json

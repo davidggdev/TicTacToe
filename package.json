@@ -1,0 +1,27 @@
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --mode production",
+    "watch": "webpack --watch",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "css-loader": "^6.x",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "mini-css-extract-plugin": "^2.x",
+    "sass": "^1.x",
+    "sass-loader": "^13.x",
+    "style-loader": "^3.x",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.x",
+    "typescript": "^4.x",
+    "webpack": "^5.x",
+    "webpack-cli": "^4.x"
+  },
+  "dependencies": {
+    "axios": "^0.27.x"
+  }
+}
