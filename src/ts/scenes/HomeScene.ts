@@ -1,34 +1,27 @@
 import { Scene } from "../Scene";
+import { ModelScene } from "./ModelScene";
 
 /**
  * Clase HomeScene
  */
-export class HomeScene {
+export class HomeScene extends ModelScene {
   /**
-   *  Escena de la aplicación
+   * Inicializa la escena Home
+   * @returns {void}
+   * @public
    */
-  scene: Scene | null;
-
-  /**
-   * Constructor de la clase
-   */
-  constructor() {
-    // Inicializamos la escena Home por defecto
-    this.scene = null;
-  }
-
-  public init() {
+  public init(): void {
     this.scene = new Scene("home");
   }
-  
+
   /**
    * Enlaza los eventos de la escena Home
+   * Sobreescribimos el método de la clase padre para añadir eventos
+   * @returns {void}
+   * @public
+   * @override ModelScene.bindEvents
    */
   public bindEvents(): void {
     console.log("HomeScene bindEvents");
-  }
-
-  public unbildEvents(): void {
-    console.log("GameScene unbindEvents");
   }
 }
