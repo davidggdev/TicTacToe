@@ -13,6 +13,7 @@ export class App {
    * @returns {void}
    */
   constructor() {
+    // Instancia de la escena principal
     this.mainScene = new MainScene();
   }
 
@@ -46,25 +47,6 @@ export class App {
   private bindEvents(): void {
     // Bind events from MainScene class
     this.mainScene.bindEvents();
-  }
-
-  /**
-   * Realiza una petición AJAX
-   * @returns {Promise<void>}
-   * @private
-   */
-  private async makeRequest(): Promise<void> {
-    axios
-      .post("/api/ajax-handler.php", {
-        action: "index/get",
-        data: {},
-      })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
   }
 }
 

@@ -7,7 +7,10 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-typescript": "^7.24.7",
     "@types/jest": "^29.5.12",
+    "babel-jest": "^29.7.0",
     "css-loader": "^6.x",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
@@ -17,7 +20,7 @@
     "style-loader": "^3.x",
     "ts-jest": "^29.2.5",
     "ts-loader": "^9.x",
-    "typescript": "^4.x",
+    "typescript": "^4.9.5",
     "webpack": "^5.x",
     "webpack-cli": "^4.x"
   },

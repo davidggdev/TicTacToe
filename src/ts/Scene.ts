@@ -19,7 +19,7 @@ export class Scene {
     try {
       const sceneContainer = document.getElementById("scene-container");
       if (!sceneContainer) {
-        throw new Error('No se ha encontrado el contenedor <div id="scene-container"></div>');
+        throw new Error("Scene container not found");
       }
       this.sceneContainer = sceneContainer;
       if (defaultScene) {
@@ -36,20 +36,10 @@ export class Scene {
    * @returns {void}
    * @private
    */
-  private resetScene(): void {
+  public resetScene(): void {
     if (this.sceneContainer) {
       this.sceneContainer.innerHTML = "";
     }
-  }
-
-  /**
-   * Establece la escena principal
-   * @param {string} scene
-   * @returns {void}
-   * @private
-   */
-  public setSceneContainer(scene: string): void {
-    this.getSceneView(scene);
   }
 
   /**
@@ -58,7 +48,7 @@ export class Scene {
    * @returns {Promise<void>}
    * @private
    */
-  private async getSceneView(sceneView: string): Promise<void> {
+  public async getSceneView(sceneView: string): Promise<void> {
     try {
       // Reset scene
       this.resetScene();

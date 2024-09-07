@@ -56,7 +56,7 @@ export class MainScene {
    * @returns {void}
    * @private
    */
-  private onMenuItemClick(): void {
+  public onMenuItemClick(): void {
     document.body.addEventListener("click", (event) => {
       try {
         const target = event.target as HTMLElement;

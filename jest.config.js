@@ -1,8 +1,8 @@
 module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'jest-environment-jsdom',
-    moduleFileExtensions: ['ts', 'js'],
-    testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'],
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+    testMatch: ['**/__test__/**/*.test.(ts|tsx|js)'],
     globals: {
       'ts-jest': {
         isolatedModules: true
@@ -10,7 +10,7 @@ module.exports = {
     },
     moduleDirectories: ['node_modules', 'src'],
     transform: {
-      '^.+\\.ts$': 'ts-jest'
-    }
+      '^.+\\.(ts|tsx)$': 'babel-jest',
+    },
   };
   
