@@ -1,13 +1,8 @@
-# Habilita el motor de reescritura
-RewriteEngine On
-
-# Redirige todas las solicitudes a la carpeta 'public'
-RewriteCond %{REQUEST_URI} !^/public/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /public/$1 [L]
-
-# Redirige todas las solicitudes que no coincidan con un archivo o directorio a 'public/index.php'
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ public/index.php [L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Redirigir las solicitudes a la carpeta "public"
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
